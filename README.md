@@ -1,6 +1,6 @@
 # SAO Backend Layer
 
-## Rest à faire
+## Reste à faire
 
 ### Partie entreprise
 
