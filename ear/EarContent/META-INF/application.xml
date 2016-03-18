@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" id="Application_ID" version="7">
+  <display-name>soa-backend-layer-ear</display-name>
+  <module>
+    <ejb>soa-backend-layer-entreprise.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>soa-backend-layer-web.war</web-uri>
+      <context-root>soa-backend-layer-web</context-root>
+    </web>
+  </module>
+</application>
