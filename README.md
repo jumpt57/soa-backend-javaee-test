@@ -26,18 +26,17 @@ Veuillez créer le répertoire E:\java\Standard_YG\APDistrib\JBoss\modules\syste
 Veuillez y mettre le jar postgresql-9.5.jdbc4.jar (renommez-le si nécessaire)
 Créez un fichier module.xml et mettez-y ce code :
 
-><?xml version="1.0" encoding="UTF-8"?> 
-><module xmlns="urn:jboss:module:1.1" name="org.postgresql">
->  <resources>
->    <resource-root path="postgresql-9.5.jdbc4.jar"/>
->  </resources>
->  <dependencies>
->    <module name="javax.api"/>
->	<module name="javax.transaction.api"/>
->	<module name="javax.servlet.api" optional="true"/>
->  </dependencies>
-></module>
-
+> <?xml version="1.0" encoding="UTF-8"?> 
+	<module xmlns="urn:jboss:module:1.1" name="org.postgresql">
+	  <resources>
+		<resource-root path="postgresql-9.5.jdbc4.jar"/>
+	  </resources>
+	  <dependencies>
+		<module name="javax.api"/>
+		<module name="javax.transaction.api"/>
+		<module name="javax.servlet.api" optional="true"/>
+	  </dependencies>
+	</module>
 
 
 Démarrez le serveur et ouvrez jboss-cli.bat qui se trouve  dans E:\java\Standard_YG\APDistrib\JBoss\bin
@@ -50,37 +49,37 @@ Copiez cette commande :
 
 E:\java\Standard_YG\APDistrib\JBoss\standalone\configuration\standalone.xml comme cela :
 
-> <datasource jta="true" jndi-name="java:jboss/datasources/some-ds" pool-name="name_ds" enabled="true" use-java-context="true" use-ccm="true">
->	<connection-url>jdbc:postgresql://localhost:5432/dbname</connection-url>
->	<driver>postgresql-driver</driver>
->	<pool>
->		<min-pool-size>2</min-pool-size>
->		<max-pool-size>20</max-pool-size>
->	</pool>
->	<security>
->		<user-name>username</user-name>
->		<password>password</password>
->	</security>
->	<statement>
->		<prepared-statement-cache-size>0</prepared-statement-cache-size>
->		<share-prepared-statements>false</share-prepared-statements>
->	</statement>
-></datasource>
+ <datasource jta="true" jndi-name="java:jboss/datasources/some-ds" pool-name="name_ds" enabled="true" use-java-context="true" use-ccm="true">
+	<connection-url>jdbc:postgresql://localhost:5432/dbname</connection-url>
+	<driver>postgresql-driver</driver>
+	<pool>
+		<min-pool-size>2</min-pool-size>
+		<max-pool-size>20</max-pool-size>
+	</pool>
+	<security>
+		<user-name>username</user-name>
+		<password>password</password>
+	</security>
+	<statement>
+		<prepared-statement-cache-size>0</prepared-statement-cache-size>
+		<share-prepared-statements>false</share-prepared-statements>
+	</statement>
+</datasource>
 
 ## JPA et persistence.xml
 
 Dans un projet JPA pour faire la connexion avec la base de données :
 
-><provider>org.hibernate.ejb.HibernatePersistence</provider>
-><jta-data-source>java:jboss/datasources/source_ds</jta-data-source>
-><exclude-unlisted-classes>false</exclude-unlisted-classes>
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+<jta-data-source>java:jboss/datasources/source_ds</jta-data-source>
+<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
-><properties>
->	<property name='javax.persistence.jdbc.driver' value='org.postgresql.Driver' />
->	<property name="hibernate.hbm2ddl.auto" value="update" />
->	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
->	<property name="hibernate.show_sql" value="false" />
->	<property name="hibernate.default_schema" value="schema_bd"/>
-></properties>
+<properties>
+	<property name='javax.persistence.jdbc.driver' value='org.postgresql.Driver' />
+	<property name="hibernate.hbm2ddl.auto" value="update" />
+	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+	<property name="hibernate.show_sql" value="false" />
+	<property name="hibernate.default_schema" value="schema_bd"/>
+</properties>
 
 
