@@ -21,7 +21,7 @@ public class Category implements Serializable {
 	@Column
 	private String name;
 	
-	@OneToMany(mappedBy = "categ")
+	@OneToMany(mappedBy = "categ", fetch = FetchType.EAGER)
 	private List<Item> items;
 
 	public Category() {
