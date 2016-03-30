@@ -1,1 +1,11 @@
 /entreprise/build/classes/soa/backend/layer/entreprise/ejb/*.class
+/entreprise/.settings
+/entreprise/build
+/entreprise/.classpath
+/entreprise/.project
+/web/.project
+/web/.settings
+/web/build
+/web/.classpath
+/ear/.project
+/ear/.settings
